@@ -22,28 +22,39 @@ html {
 
   /* nav styles */
 
-  nav {
-    display: flex;
-    justify-content: center;
-    
+  .hamburger {
+    padding-right: 20px;
+    cursor: pointer;
   }
   
-.nav-links {
-  width: 100%;
-  top: 5rem;
-  left: 48px;
-  background-color: #ff9776;
+  .hamburger .line {
+    display: block;
+    width: 40px;
+    height: 5px;
+    margin-bottom: 10px;
+    background-color: #ff9776;
+  }
 
-  margin: 0;
-}
 
-.nav-links a {
-  padding: 10px 0;
-  text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-transform: uppercase;
-}
+  
+  .nav-links {
+    width: 100%;
+    top: 5rem;
+    left: 48px;
+    background-color: #ff9776;
+    display: none;
+    margin: 0;
+  }
+  
+  .nav-links a {
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
 
 .nav-links a:hover, a:focus {
   background-color: #ff9776;
@@ -63,7 +74,11 @@ html {
   }
 
   .nav-links a {
+    display: inline-block;
     padding: 15px 20px;
   }
 
+  .hamburger {
+    display: none;
+  }
 }
