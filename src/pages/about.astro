@@ -32,27 +32,34 @@ const textCase = "uppercase";
         font-weight: var(--fontWeight);
         text-transform:  var(--textCase);
     }
+
+    #facts, #skills{
+        color: hsl(0, 61%, 68%);
+        font-weight: bold;
+    }
 </style>
 
 
 <BaseLayout pageTitle={pageTitle}>
-    <h2>... and my new Astro site!</h2>
+    <h2 class="text-red-200 font-bold">... and my new Astro site!</h2>
 
     {happy && <p>I am working through Astro's introductory tutorial. This is the second page on my website!</p>}
 
     {finished ? <p>I finished it!!!</p> : <p>This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!</p>}
 
     {goal == 3 ? <p>My goal is to finished in 3 days</p>:  <p>My goal is not 3 days.</p>}
-
-    <p>Here are a few facts about me:</p>
-    <ul>
-        <li>My name is {identity.firstName}.</li>
-        <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
-        {identity.hobbies.length >= 2 && 
-            <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
-        } 
-    </ul>
-    <p>My skills are:</p>
+    
+    <div class="py-2">
+        <p id="facts">Here are a few facts about me:</p>
+        <ul>
+            <li>My name is {identity.firstName}.</li>
+            <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
+            {identity.hobbies.length >= 2 && 
+                <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
+            } 
+        </ul>
+    </div>
+    <p id="skills">My skills are:</p>
     <ul>
         {skills.map((skill) => <li class="skill">{skill}</li>)}
     </ul>
