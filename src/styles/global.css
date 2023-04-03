@@ -87,3 +87,12 @@ html {
     display: none;
   }
 }
+
+html.dark {
+  background-color: #0c0a09;
+  color: #fff;
+}
+
+.dark .nav-links a {
+  color: #fff;
+}
